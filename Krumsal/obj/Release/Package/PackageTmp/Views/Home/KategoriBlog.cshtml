@@ -1,0 +1,138 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@using Kurumsal.Helper;
+@model IPagedList<Kurumsal.Models.Blog>
+@{
+    ViewBag.Title = "KategoriBlog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    ul.pagination {
+        justify-content: center;
+    }
+
+        ul.pagination li a {
+            color: white;
+        }
+
+        /*ul.pagination li a:hover {
+                color: white;
+            }*/
+
+
+        ul.pagination li {
+            background-color: #f28125;
+            padding: 10px;
+            padding-left: 19px;
+            padding-right: 19px;
+            color: white;
+            cursor: pointer;
+            margin: 2px;
+            border-radius: 50%;
+        }
+</style>
+
+<div class="ftco-blocks-cover-1">
+    <div class="site-section-cover overlay" style="background-image:url('../../Content/img/19385.jpg')">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-7 text-center">
+                    
+                        <h1 class="mb-4 text-white">Haberler</h1>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section bg-light">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-6 mb-4">
+                            <div class="post-entry-1 h-100">
+                                <a href="/BlogPost/@SeoHelper.ToSeoUrl(item.ResimURL).ToLower()-@item.BlogId">
+                                    <img src="@item.ResimURL" alt="@item.Baslik" class="img-fluid">
+                                </a>
+                                <div class="post-entry-1-contents">
+
+                                    <h2>
+                                        <a href="/BlogPost/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()-@item.BlogId">
+                                            @{ string baslik = "";
+                                                if (item.Baslik.Length > 25)
+                                                {
+                                                    baslik = item.Baslik.Substring(0, 25) + "...";
+                                                }
+                                                else
+                                                {
+                                                    baslik = @item.Baslik;
+                                                }
+                                            }
+
+                                            @baslik
+                                        </a>
+                                    </h2>
+                                    <h5>
+                                        <span class="badge badge-orange text-white">@item.Kategori.KategoriAd</span>
+                                    </h5>
+                                    <p class="card-description">
+                                        @{
+                                            string aciklama = "";
+                                            if (item.Aciklama.Length > 100)
+                                            {
+                                                aciklama = item.Aciklama.Substring(0, 100) + "...";
+                                            }
+                                            else
+                                            {
+                                                aciklama = item.Aciklama;
+                                            }
+                                        }
+
+                                        @aciklama
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    <div class="col-md-12 mt-4">
+                        <nav aria-label="...">
+                            @Html.PagedListPager(Model, Sayfa => Url.Action("Blog", new { Sayfa }))
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sidebar-box">
+                    <div class="categories">
+                        @{
+                            Html.RenderAction("BlogKategoriPartial", "Home");
+                        }
+                    </div>
+                </div>
+
+                <div class="sidebar-box bg-white">
+
+                    <h4 class="footer-heading mb-4 font-weight-bold">Arama yap!</h4>
+
+                    <form action="/Home/AramaYap" method="post" class="d-flex">
+                        <input type="text" class="form-control mr-3" name="aranan" placeholder="Ara">
+                        <input type="submit" value="Ara" class="btn btn-orange rounded-0">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
