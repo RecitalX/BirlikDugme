@@ -1,0 +1,65 @@
+﻿@model Kurumsal.Models.Yorum
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <h3>Bu yorumu silmek istediğinizden emin misiniz?</h3>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Blog.Baslik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Blog.Baslik)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AdSoyad)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AdSoyad)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Eposta)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Eposta)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Icerik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Icerik)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Onay)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Onay)
+            </dd>
+
+        </dl>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Sil" class="btn btn-danger" />
+                @Html.ActionLink("Listeye Dön", "Index", null, new { @class = "btn btn-warning" })
+            </div>
+        }
+    </div>
+</div>
