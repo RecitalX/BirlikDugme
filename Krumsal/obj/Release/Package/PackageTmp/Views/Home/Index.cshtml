@@ -1,0 +1,158 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="ftco-blocks-cover-1">
+    <div class="site-section-cover overlay" style="background-image: url('../../Content/img/8183.png')">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-7 text-center">
+                    <h1 class="mb-4">Şenaks Aksesuar</h1>
+                    <p class="mb-4">
+                        Uygun fiyat avantajı, Sürekli artan ürün çeşidi. İstediğiniz her şey ve her şey tam istediğiniz gibi.
+                    </p>
+                    <p>
+                        <a href="/Iletisim" class="btn btn-orange btn-outline-white py-3 px-5";">Bize Ulaşın!</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{
+    Html.RenderAction("HakkimizdaPartial", "Home");
+}
+
+@*Servislerimiz*@
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-7 mx-auto text-center">
+                <h2 class="heading-29190">
+                    Servislerimiz
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-6 col-lg-3 mb-3">
+                <div class="service-29128 text-center">
+                    <span class="d-block wrap-icon" style="font-size:30px;">
+                        <i class="fas fa-plane"></i>
+                    </span>
+                    <h3>İthalat Süreci</h3>
+                    <p>Çin'in Shangai kentinde ki çeşitli firmalardan temin ettiğimiz ürünlerimizin ulaşım sürecini özen ile takip ediyoruz.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-3">
+                <div class="service-29128 text-center">
+                    <span class="d-block wrap-icon" style="font-size:30px;">
+                        <i class="fas fa-handshake"></i>
+                    </span>
+                    <h3>Bağlantılarımız</h3>
+                    <p>Çin merkezli üretim firmaları ile olan bağlantılarımız ve kendi üretimimiz sayesinde istediğiniz ürün tasarımını temin edebiliriz.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-3">
+                <div class="service-29128 text-center">
+                    <span class="d-block wrap-icon" style="font-size:30px;">
+                        <i class="fas fa-stopwatch"></i>
+                    </span>
+                    <h3>Üretim Sürecimiz</h3>
+                    <p>Kendi imalathanemizde istekleriniz ve doğrultusunda ve belli bir süreç içerisinde her türlü adet ve tasarımı üretebiliyoruz.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-3">
+                <div class="service-29128 text-center">
+                    <span class="d-block wrap-icon" style="font-size:30px;">
+                        <i class="fas fa-coffee"></i>
+                    </span>
+                    <h3>Müşteri Memnuniyeti</h3>
+                    <p>Yaptığımız satışlarımızda gerek güler yüzümüz gerek kalitemiz ile müşterilerimizden hep tam puan almayı başarmış durumdayız.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@*Ürünler*@
+@{
+    Html.RenderAction("HizmetKayitPartial", "Home");
+}
+
+@*İstatistikler*@
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                <div class="fact-39281 d-flex align-items-center">
+                    <div class="wrap-icon mr-3">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <div class="text">
+                        <span class="d-block">2741</span>
+                        <span>Müşterilerimiz</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                <div class="fact-39281 d-flex align-items-center">
+                    <div class="wrap-icon mr-3">
+                        <i class="far fa-chart-bar"></i>
+                    </div>
+                    <div class="text">
+                        <span class="d-block">2000</span>
+                        <span>Günlük Ürün Üretimimiz</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                <div class="fact-39281 d-flex align-items-center">
+                    <div class="wrap-icon mr-3">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="text">
+                        <span class="d-block">6</span>
+                        <span>Ekip üyelerimiz</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                <div class="fact-39281 d-flex align-items-center">
+                    <div class="wrap-icon mr-3">
+                        <i class="fas fa-box-open"></i>
+
+                    </div>
+                    <div class="text">
+                        <span class="d-block">364</span>
+                        <span>Ürün Çeşitlerimiz</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Blog*@
+<div class="site-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-7 mx-auto text-center">
+                <h2 class="heading-29190">Haberler</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            @{
+                Html.RenderAction("BlogKayitPartial", "Home");
+            }
+        </div>
+    </div>
+</div>

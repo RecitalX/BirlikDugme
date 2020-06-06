@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Kurumsal.Models.Yorum>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#myTable').DataTable(
+
+            {
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+                }
+            }
+        );
+    });
+</script>
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary d-inline">Yorum Listesi</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="myTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>
+                                Makalenin Adı
+                            </th>
+                            <th>
+                               Ad Soyad
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Onay
+                            </th>
+                            <th width="12%"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Blog.Baslik)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AdSoyad)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Eposta)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Onay)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Güncelle", "Edit", new { id = item.YorumId }, new { @class="btn btn-primary btn-sm" })
+                                    @Html.ActionLink("Sil", "Delete", new { id = item.YorumId }, new { @class="btn btn-danger btn-sm" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

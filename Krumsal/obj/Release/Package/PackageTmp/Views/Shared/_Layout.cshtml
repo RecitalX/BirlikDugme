@@ -1,0 +1,111 @@
+﻿@using System.Web.Optimization
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>@ViewBag.Kimlik.Title</title>
+    <meta name="keywords" content="@ViewBag.Kimlik.Keywords" />
+    <meta content="@Html.Raw(ViewBag.Kimlik.Description)" name="descriptison">
+
+    <!-- Favicons -->
+    <link href="@ViewBag.Kimlik.LogoURL" rel="icon">
+    <link href="@ViewBag.Kimlik.LogoURL" rel="apple-touch-icon">
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/font/icomoon/style.css">
+
+    @Styles.Render("~/css/layout")
+
+    <script src="https://kit.fontawesome.com/fcd59919ba.js" crossorigin="anonymous"></script>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <div class="site-wrap" id="home-section">
+
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+
+        <header class="site-navbar site-navbar-target" role="banner">
+
+            <div class="container">
+                <div class="row align-items-center position-relative">
+
+                    <div class="col-3 ">
+                        <div class="site-logo">
+                            <a href="/Anasayfa" style="text-decoration:none;">
+
+                                <img src="~/Content/img/senaks-logo.png" width="70" />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-9  text-right">
+                        <span class="d-inline-block d-lg-block">
+                            <a href="#" class="text-white site-menu-toggle js-menu-toggle py-5" style="text-decoration:none;"><span class="icon-menu h3 text-white"></span></a>
+                        </span>
+
+                        <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
+                            <ul class="site-menu main-menu js-clone-nav ml-auto">
+                                <li><a href="/Anasayfa" class="nav-link">Anasayfa</a></li>
+                                <li><a href="/Urunler" class="nav-link">Ürünler</a></li>
+                                <li><a href="/Blog" class="nav-link">Haberler</a></li>
+                                <li><a href="/Iletisim" class="nav-link">İletişim</a></li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        @RenderBody()
+
+        <footer class="site-footer bg-light">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 text-center">
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <h2 class="footer-heading mb-4 font-weight-bold">Sosyal Medya</h2>
+                                <div class="social_29128 white mb-3">
+                                    @{
+                                        Html.RenderAction("TelefonAdresPartial", "Home");
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <p>
+                                    Copyright &copy; Şenaks Aksesuar @DateTime.Now.Year. Tüm hakları saklıdır.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    @Scripts.Render("~/script/layout")
+
+
+</body>
+
+</html>

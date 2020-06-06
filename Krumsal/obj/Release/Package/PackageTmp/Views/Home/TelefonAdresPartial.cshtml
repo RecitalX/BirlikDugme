@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Kurumsal.Models.Iletisim>
+
+@{
+    Layout = null;
+}
+
+
+
+@foreach (var item in Model)
+{
+    <a target="_blank" href="https://www.facebook.com/%C5%9Eenaks-Aksesuar-321609395291382/"><span class="icon-facebook"></span></a>
+    <a target="_blank" href="https://www.instagram.com/senaks_aksesuar/?hl=tr"><span class="icon-instagram"></span></a>
+    <a target="_blank" href="https://br.pinterest.com/enaksa/"><span class="icon-pinterest"></span></a>
+}
+
+<!-- Getbutton.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            whatsapp: "+905454373787", // WhatsApp number
+            call_to_action: "Bize mesaj gönderin", // Call to action
+            position: "left", // Position may be 'right' or 'left'
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();</script>
+<!-- /Getbutton.io widget -->
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5e7b5f1a8d27e70012e20260&product=inline-follow-buttons&cms=unknown' async='async'></script>
