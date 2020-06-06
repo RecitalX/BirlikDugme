@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Kurumsal.Models.HizmetKategori>
+
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <li><a class="" href="#">@item.HizmetKategoriAdi</a></li>
+}
